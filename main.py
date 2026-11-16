@@ -127,6 +127,22 @@ def resolve_ticket():
                         else:
                             print(f'I am sorry I did not get that please enter a valid answer for ticket number {ticket_resolve_num} and try again')
 
+#function for option 5
+def statistics():
+    print("=====Ticket Statistics=====")
+    total_tickets = len(tickets)
+    print("Total Tickets: ", total_tickets)
+    open_count = 0
+    resolved_count = 0
+    for ticket in tickets: 
+        if ticket["status"] == "Open":
+           open_count += 1
+        elif ticket["status"] == "Resolved":
+            resolved_count += 1
+    print('Open Tickets: ', open_count)
+    print('Resolved Tickets: ', resolved_count)
+    
+
 # Main Menu Selection Process
 
 while True:
@@ -151,6 +167,7 @@ while True:
 
     elif main_menu_selection == "5":
         print("Viewing ticket statistics")
+        statistics()
 
     elif main_menu_selection == "6":
         print("Exiting the Program")
